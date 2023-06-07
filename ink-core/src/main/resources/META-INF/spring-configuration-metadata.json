@@ -1,0 +1,47 @@
+{
+  "groups": [
+    {
+      "name": "ink",
+      "type": "cn.hyperchain.ink.core.config.InkConfig",
+      "sourceType": "cn.hyperchain.ink.core.config.InkConfig"
+    },
+    {
+      "name": "ink.attach-config",
+      "type": "cn.hyperchain.ink.core.config.module.AttachConfig",
+      "sourceType": "cn.hyperchain.ink.core.config.InkConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "ink.attach-config.server",
+      "type": "java.lang.String",
+      "description": "服务URL信息 http:\/\/172.16.0.1:8080\/upload\/",
+      "sourceType": "cn.hyperchain.ink.core.config.module.AttachConfig"
+    },
+    {
+      "name": "ink.attach-config.server-path",
+      "type": "java.lang.String",
+      "description": "文件目录 \/opt\/upload\/",
+      "sourceType": "cn.hyperchain.ink.core.config.module.AttachConfig"
+    },
+    {
+      "name": "ink.person-import-template",
+      "type": "java.lang.String",
+      "description": "导出文件模版地址",
+      "sourceType": "cn.hyperchain.ink.core.config.InkConfig"
+    },
+    {
+      "name": "ink.swagger-enable",
+      "type": "java.lang.Boolean",
+      "description": "是否开启swagger",
+      "sourceType": "cn.hyperchain.ink.core.config.InkConfig"
+    },
+    {
+      "name": "ink.token-expire-mills",
+      "type": "java.lang.Long",
+      "description": "Token过期时间ms",
+      "sourceType": "cn.hyperchain.ink.core.config.InkConfig"
+    }
+  ],
+  "hints": []
+}
