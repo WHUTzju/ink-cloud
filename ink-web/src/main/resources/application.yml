@@ -1,0 +1,83 @@
+spring:
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 105MB
+  aop:
+    proxy-target-class: true
+    auto: true
+  datasource:
+    druid:
+      #初始化
+      initial-size: 10
+      #最大
+      max-active: 100
+      #最小
+      min-idle: 10
+      #最大等待连接时间
+      max-wait: 60000
+      #打开PSCache,并且指定每个连接PSCache的大小
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      #配置间隔多久才进行一次检测,检测需要关闭的空闲连接,单位是毫秒
+      time-between-eviction-runs-millis: 60000
+      #配置一个连接在池中最小生存的时间,单位是毫秒
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1 FROM DUAL
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      #配置监控统计拦截的filters,去掉后监控界面sql将无法统计,'wall'用于防火墙
+#      filters: stat, wall, log4j
+      filter:
+        stat:
+          #缺省值为3秒 此处修改为10秒
+          slow-sql-millis: 10000
+          #日志记录
+          log-slow-sql: true
+      stat-view-servlet:
+        enabled: false
+        reset-enable: false
+        login-password: B1ockch@in
+        login-username: hyperchain
+      #是否合并多个dataSource的监控数据
+      use-global-data-source-stat: true
+      #连接进行保活处理
+      keep-alive: true
+      #关闭长时间不用的连接
+      remove-abandoned: true
+      #长时间不用的连接的超时时间 单位秒
+      remove-abandoned-timeout: 1800
+      #输出日志
+      log-abandoned: true
+  redis:
+    # 如果使用的jedis 则将lettuce改成jedis即可
+    lettuce:
+      pool:
+        max-wait: 6000ms
+        # 最大活跃链接数 默认8
+        max-active: 100
+        # 最大空闲连接数 默认8
+        max-idle: 100
+        # 最小空闲连接数 默认0
+        min-idle: 10
+    timeout: 60s
+
+
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: cn.hyperchain.ink.core.dao.po
+  global-config:
+    db-config:
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    root: info
