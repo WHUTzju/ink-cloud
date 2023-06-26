@@ -1,7 +1,6 @@
 package cn.hyperchain.ink.web.controller;
 
 
-import cn.hyperchain.ink.core.biz.service.intf.TaNoCatchPersonService;
 import cn.hyperchain.ink.core.biz.service.intf.TaUserService;
 import cn.hyperchain.ink.core.dao.po.TaUser;
 import cn.hyperchain.ink.web.InkWebApplication;
@@ -20,9 +19,6 @@ public class AdminUserControllerTest {
 
     @Autowired
     private TaUserService taUserService;
-
-    @Autowired
-    private TaNoCatchPersonService taNoCatchPersonService;
 
 
 

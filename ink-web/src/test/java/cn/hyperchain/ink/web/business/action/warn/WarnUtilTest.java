@@ -16,8 +16,8 @@ public class WarnUtilTest {
 
         Date ruleStartTime = new SimpleDateFormat("yyyy-MM-dd").parse("2023-05-19");
 
-        int ld = WarnUtil.lastDays(ruleStartTime, 15);
-        System.out.println(ld);
+//        int ld = WarnUtil.lastDays(ruleStartTime, 15);
+//        System.out.println(ld);
         System.out.println(DateUtil.countDaysBetween(ruleStartTime, new Date()));
     }
 
