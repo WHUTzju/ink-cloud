@@ -8,6 +8,8 @@ import cn.hyperchain.ink.core.model.token.Token;
 import cn.hyperchain.ink.core.response.BaseResult;
 import cn.hyperchain.ink.core.response.BaseResultFactory;
 import cn.hyperchain.ink.core.system.interceptors.RequestToken;
+import cn.hyperchain.ink.core.system.swagger.ApiVersion;
+import cn.hyperchain.ink.core.system.swagger.ApiVersionConstant;
 import cn.hyperchain.ink.web.business.user.UnitVO;
 import cn.hyperchain.ink.web.business.user.WebUserService;
 import cn.hyperchain.ink.web.business.user.model.*;
@@ -28,7 +30,7 @@ import java.util.List;
  * @author inkchain
  * @since 2023-05-22
  */
-@Api(value = "用户管理模块", description = "用户管理模块")
+@Api(value = "用户管理模块",tags = "用户管理模块")
 @RestController
 @RequestMapping("/v1/user")
 public class UserController {
@@ -42,6 +44,7 @@ public class UserController {
         return webUserService.queryAllUnit();
     }
 
+    @ApiVersion(groups = {ApiVersionConstant.BACKEND_API_V100})
     @ApiOperation(value = "获取所有管辖单位")
     @GetMapping("/allDepartment")
     public BaseResult<List<DepartmentVO>> queryAllDepartment(
@@ -71,6 +74,7 @@ public class UserController {
         return webUserService.login(loginDTO);
     }
 
+    @ApiVersion(groups = {ApiVersionConstant.BACKEND_API_V100})
     @ApiOperation(value = "用户信息", notes = "用户信息")
     @GetMapping("/userInfo")
     public BaseResult<UserInfoVO> queryUserinfo(
