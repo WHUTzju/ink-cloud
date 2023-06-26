@@ -15,3 +15,23 @@
 
 
 
+
+### ink项目架构改造
+
+- API文档：knife4j + swagger2
+
+- 安全框架：SpringSecurity+JWT
+
+- 数据层：mybatisplus
+
+- 代码生成器:
+  
+- 日志框架: logback
+
+
+
+
+
+
+
+
