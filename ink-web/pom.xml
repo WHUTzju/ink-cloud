@@ -23,12 +23,17 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!--Spring Boot Actuator 模块提供了生产级别的功能-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
 
         <dependency>
             <groupId>cn.hyperchain</groupId>
@@ -50,11 +55,11 @@
 
         <!--MyBatisPlus 执行SQL分析打印-->
         <!--该插件有性能损耗，不建议生产环境使用。开发和测试阶段可以使用-->
-<!--        <dependency>-->
-<!--            <groupId>p6spy</groupId>-->
-<!--            <artifactId>p6spy</artifactId>-->
-<!--            <version>3.9.1</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>p6spy</groupId>-->
+        <!--            <artifactId>p6spy</artifactId>-->
+        <!--            <version>3.9.1</version>-->
+        <!--        </dependency>-->
 
     </dependencies>
 

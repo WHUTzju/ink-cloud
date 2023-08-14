@@ -14,6 +14,7 @@ import cn.hyperchain.ink.core.util.AssertUtil;
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.core.MethodParameter;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ObjectUtils;
@@ -64,9 +65,8 @@ public class RequestTokenArgumentResolver implements HandlerMethodArgumentResolv
          */
         String xjwtStr = webRequest.getHeader(BaseConstant.X_ACCESS_TOKEN);
 //        AssertUtil.check(ObjectUtils.isEmpty(xjwtStr), Code.TOKEN_NOT_EXIST);
-        if (ObjectUtils.isEmpty(xjwtStr)){
-            throw new TokenException(Code.TOKEN_NOT_EXIST);
-        }
+        AssertUtil.isNUll(xjwtStr, Code.TOKEN_NOT_EXIST);
+
         try {
 
             /**
@@ -78,12 +78,11 @@ public class RequestTokenArgumentResolver implements HandlerMethodArgumentResolv
             TaUser user = taUserService.getById(token.getUuid());
             Token token2 = tokenFactory.verifyJwtToken(user, xjwtStr);
             log.info("verify success! uuid:{}", token2.getUuid());
-
             /**
              * 2 验证角色
              */
-            List<Integer> roleCodeList = Arrays.stream(requestToken.roles()).map(UserRole::getCode).collect(Collectors.toList());
-
+            List<Integer> roleCodeList = Arrays.stream(requestToken.roles())
+                    .map(UserRole::getCode).collect(Collectors.toList());
 
             if (!roleCodeList.contains(UserRole.NAKE.getCode())) {
                 if (roleCodeList.contains(user.getUserRole())) {

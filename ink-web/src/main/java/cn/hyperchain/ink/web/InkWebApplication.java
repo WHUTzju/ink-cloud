@@ -19,6 +19,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
+/**
+ * UserDetailsServiceAutoConfiguration
+ *
+ */
 @Slf4j
 @EnableScheduling
 @EnableTransactionManagement

@@ -40,7 +40,7 @@
         <mybatis-plus.version>3.1.0</mybatis-plus.version>
         <mybatis-plus-generator.version>3.5.0</mybatis-plus-generator.version>
         <mysql.version>8.0.21</mysql.version>
-        <hutool.version>5.7.2</hutool.version>
+        <hutool.version>5.8.2</hutool.version>
         <fastjson.version>1.2.75</fastjson.version>
 
         <mybatis.version>3.5.0</mybatis.version>
@@ -49,6 +49,8 @@
 
         <slf4j.version>1.7.25</slf4j.version>
         <log4j.version>1.2.17</log4j.version>
+
+        <commons.version>2.6</commons.version>
 
         <swagger.fox.version>2.9.2</swagger.fox.version>
         <swagger.version>1.5.22</swagger.version>

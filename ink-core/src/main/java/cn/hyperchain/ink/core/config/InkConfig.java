@@ -13,8 +13,8 @@ import org.springframework.boot.context.properties.NestedConfigurationProperty;
  * @author: inkChain
  * @create: 2023-05-19 20:31
  **/
-@ConfigurationProperties(prefix = "ink")
 @Data
+@ConfigurationProperties(prefix = "ink")
 @AllArgsConstructor
 @NoArgsConstructor
 public class InkConfig {
@@ -24,15 +24,8 @@ public class InkConfig {
     private Long tokenExpireMills;
 
     /**
-     * 是否开启swagger
+     * 文件配置
      */
-    private Boolean swaggerEnable;
-
-    /**
-     * 导出文件模版地址
-     */
-    private String personImportTemplate;
-
     @NestedConfigurationProperty
     private AttachConfig attachConfig;
 

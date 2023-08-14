@@ -1,10 +1,9 @@
 package cn.hyperchain.ink.core.util;
 
+import cn.hyperchain.ink.core.constant.BaseConstant;
 import com.alibaba.fastjson.JSONArray;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
-import org.jeecg.common.constant.CommonConstant;
-import org.jeecg.common.constant.SymbolConstant;
 import org.springframework.beans.BeanUtils;
 
 import javax.servlet.http.HttpServletRequest;
@@ -37,14 +36,14 @@ public class oConvertUtils {
 		if ("".equals(object)) {
 			return (true);
 		}
-		if (CommonConstant.STRING_NULL.equals(object)) {
+		if (BaseConstant.STRING_NULL.equals(object)) {
 			return (true);
 		}
 		return (false);
 	}
 	
 	public static boolean isNotEmpty(Object object) {
-		if (object != null && !"".equals(object) && !object.equals(CommonConstant.STRING_NULL)) {
+		if (object != null && !"".equals(object) && !object.equals(BaseConstant.STRING_NULL)) {
 			return (true);
 		}
 		return (false);
@@ -203,14 +202,6 @@ public class oConvertUtils {
 		return (getString(s, ""));
 	}
 
-	/**
-	 * 转义成Unicode编码
-	 * @param s
-	 * @return
-	 */
-	/*public static String escapeJava(Object s) {
-		return StringEscapeUtils.escapeJava(getString(s));
-	}*/
 	
 	public static String getString(Object object) {
 		if (isEmpty(object)) {
@@ -283,13 +274,13 @@ public class oConvertUtils {
 	 */
 	public static String getIpAddrByRequest(HttpServletRequest request) {
 		String ip = request.getHeader("x-forwarded-for");
-		if (ip == null || ip.length() == 0 || CommonConstant.UNKNOWN.equalsIgnoreCase(ip)) {
+		if (ip == null || ip.length() == 0 || BaseConstant.UNKNOWN.equalsIgnoreCase(ip)) {
 			ip = request.getHeader("Proxy-Client-IP");
 		}
-		if (ip == null || ip.length() == 0 || CommonConstant.UNKNOWN.equalsIgnoreCase(ip)) {
+		if (ip == null || ip.length() == 0 || BaseConstant.UNKNOWN.equalsIgnoreCase(ip)) {
 			ip = request.getHeader("WL-Proxy-Client-IP");
 		}
-		if (ip == null || ip.length() == 0 || CommonConstant.UNKNOWN.equalsIgnoreCase(ip)) {
+		if (ip == null || ip.length() == 0 || BaseConstant.UNKNOWN.equalsIgnoreCase(ip)) {
 			ip = request.getRemoteAddr();
 		}
 		return ip;
@@ -420,8 +411,7 @@ public class oConvertUtils {
 
 	/**
 	 * SET转换MAP
-	 * 
-	 * @param str
+	 *
 	 * @return
 	 */
 	public static Map<Object, Object> setToMap(Set<Object> setobj) {
@@ -481,7 +471,7 @@ public class oConvertUtils {
 		if (name == null || name.isEmpty()) {
 			// 没必要转换
 			return "";
-		} else if (!name.contains(SymbolConstant.UNDERLINE)) {
+		} else if (!name.contains(BaseConstant.UNDERLINE)) {
 			// 不含下划线，仅将首字母小写
 			//update-begin--Author:zhoujf  Date:20180503 for：TASK #2500 【代码生成器】代码生成器开发一通用模板生成功能
 			//update-begin--Author:zhoujf  Date:20180503 for：TASK #2500 【代码生成器】代码生成器开发一通用模板生成功能
@@ -512,8 +502,7 @@ public class oConvertUtils {
 	 * 将下划线大写方式命名的字符串转换为驼峰式。
 	 * 如果转换前的下划线大写方式命名的字符串为空，则返回空字符串。</br>
 	 * 例如：hello_world,test_id->helloWorld,testId
-	 * 
-	 * @param name
+	 *
 	 *            转换前的下划线大写方式命名的字符串
 	 * @return 转换后的驼峰式命名的字符串
 	 */
@@ -547,7 +536,7 @@ public class oConvertUtils {
 		if (name == null || name.isEmpty()) {
 			// 没必要转换
 			return "";
-		} else if (!name.contains(SymbolConstant.UNDERLINE)) {
+		} else if (!name.contains(BaseConstant.UNDERLINE)) {
 			// 不含下划线，仅将首字母小写
 			return name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
 		}
