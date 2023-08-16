@@ -9,6 +9,8 @@
         <module>ink-core</module>
         <module>ink-file</module>
         <module>ink-mybatisplus-generator</module>
+        <module>ink-third</module>
+        <module>ink-common</module>
     </modules>
 
     <parent>
@@ -20,11 +22,11 @@
 
     <groupId>cn.hyperchain</groupId>
     <artifactId>ink</artifactId>
-
+    <version>1.1</version>
 
     <name>ink-cloud</name>
     <description>ink project arch</description>
-    <version>1.1</version>
+
     <properties>
         <pj.version>1.1</pj.version>
 
@@ -40,7 +42,7 @@
         <mybatis-plus.version>3.1.0</mybatis-plus.version>
         <mybatis-plus-generator.version>3.5.0</mybatis-plus-generator.version>
         <mysql.version>8.0.21</mysql.version>
-        <hutool.version>5.8.2</hutool.version>
+        <hutool.version>5.8.15</hutool.version>
         <fastjson.version>1.2.75</fastjson.version>
 
         <mybatis.version>3.5.0</mybatis.version>
@@ -52,11 +54,17 @@
 
         <commons.version>2.6</commons.version>
 
+        <!--工具相关-->
         <swagger.fox.version>2.9.2</swagger.fox.version>
         <swagger.version>1.5.22</swagger.version>
+        <knife4j-spring-boot-starter.version>4.1.0</knife4j-spring-boot-starter.version>
+
+        <mapstruct.version>1.5.3.Final</mapstruct.version>
+        <guava.version>31.1-jre</guava.version>
+        <transmittable-thread-local.version>2.14.2</transmittable-thread-local.version>
+        <jsoup.version>1.15.4</jsoup.version>
+        <skywalking.version>8.12.0</skywalking.version>
     </properties>
-
-
     <dependencyManagement>
         <dependencies>
             <!-- 统一依赖管理 -->
@@ -125,30 +133,86 @@
 
 
             <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
-<!--            <dependency>-->
-<!--                <groupId>io.springfox</groupId>-->
-<!--                <artifactId>springfox-swagger2</artifactId>-->
-<!--                <version>${swagger.fox.version}</version>-->
-<!--            </dependency>-->
-<!--            <dependency>-->
-<!--                <groupId>io.springfox</groupId>-->
-<!--                <artifactId>springfox-swagger-ui</artifactId>-->
-<!--                <version>${swagger.fox.version}</version>-->
-<!--            </dependency>-->
-<!--            <dependency>-->
-<!--                <groupId>io.swagger</groupId>-->
-<!--                <artifactId>swagger-annotations</artifactId>-->
-<!--                <version>${swagger.version}</version>-->
-<!--            </dependency>-->
-<!--            <dependency>-->
-<!--                <groupId>io.swagger</groupId>-->
-<!--                <artifactId>swagger-models</artifactId>-->
-<!--                <version>${swagger.version}</version>-->
-<!--            </dependency>-->
+            <!--            <dependency>-->
+            <!--                <groupId>io.springfox</groupId>-->
+            <!--                <artifactId>springfox-swagger2</artifactId>-->
+            <!--                <version>${swagger.fox.version}</version>-->
+            <!--            </dependency>-->
+            <!--            <dependency>-->
+            <!--                <groupId>io.springfox</groupId>-->
+            <!--                <artifactId>springfox-swagger-ui</artifactId>-->
+            <!--                <version>${swagger.fox.version}</version>-->
+            <!--            </dependency>-->
+            <!--            <dependency>-->
+            <!--                <groupId>io.swagger</groupId>-->
+            <!--                <artifactId>swagger-annotations</artifactId>-->
+            <!--                <version>${swagger.version}</version>-->
+            <!--            </dependency>-->
+            <!--            <dependency>-->
+            <!--                <groupId>io.swagger</groupId>-->
+            <!--                <artifactId>swagger-models</artifactId>-->
+            <!--                <version>${swagger.version}</version>-->
+            <!--            </dependency>-->
+
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId> <!-- use mapstruct-jdk8 for Java 8 or higher -->
+                <version>${mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-jdk8</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-processor</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>${commons.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.skywalking</groupId>
+                <artifactId>apm-toolkit-trace</artifactId>
+                <version>${skywalking.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
 
 
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>transmittable-thread-local</artifactId> <!-- 解决 ThreadLocal 父子线程的传值问题 -->
+                <version>${transmittable-thread-local.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jsoup</groupId>
+                <artifactId>jsoup</artifactId>
+                <version>${jsoup.version}</version>
+            </dependency>
         </dependencies>
 
     </dependencyManagement>
+
 
 </project>
