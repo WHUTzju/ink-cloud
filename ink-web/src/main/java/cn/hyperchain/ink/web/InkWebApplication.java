@@ -1,7 +1,6 @@
 package cn.hyperchain.ink.web;
 
 import cn.hyperchain.ink.core.config.InkConfig;
-import cn.hyperchain.ink.core.util.oConvertUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -9,7 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.env.Environment;
@@ -21,7 +19,6 @@ import java.net.UnknownHostException;
 
 /**
  * UserDetailsServiceAutoConfiguration
- *
  */
 @Slf4j
 @EnableScheduling
@@ -37,7 +34,7 @@ public class InkWebApplication {
         Environment env = application.getEnvironment();
         String ip = InetAddress.getLocalHost().getHostAddress();
         String port = env.getProperty("server.port");
-        String path = oConvertUtils.getString(env.getProperty("server.servlet.context-path"));
+        String path = env.getProperty("server.servlet.context-path");
         log.info("\n----------------------------------------------------------\n\t" +
                 "Application is running! Access URLs:\n\t" +
                 "Local: \t\thttp://localhost:" + port + path + "/\n\t" +

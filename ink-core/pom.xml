@@ -35,25 +35,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!--springboot-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-validation</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
-
-        <!--spring security-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
 
         <!-- mail       -->
         <dependency>
@@ -65,7 +46,12 @@
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>knife4j-openapi2-spring-boot-starter</artifactId>
-            <version>${knife4j-spring-boot-starter.version}</version>
+<!--            <artifactId>knife4j-openapi3-spring-boot-starter</artifactId>-->
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId> <!-- 接口文档 UI：knife4j【网关专属】 -->
+            <artifactId>knife4j-gateway-spring-boot-starter</artifactId>
         </dependency>
 
 

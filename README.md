@@ -49,6 +49,7 @@
 - 路由限流：limit
 - 熔断降级 Sentinel
 - 消息队列 RabbitMQ
+- 注册中心 Nacos
 
 ##### 2、安全框架
 
