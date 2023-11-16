@@ -11,47 +11,47 @@
 
     <artifactId>ink-core</artifactId>
     <packaging>jar</packaging>
-    <properties>
-        <knife4j-spring-boot-starter.version>4.1.0</knife4j-spring-boot-starter.version>
-    </properties>
+
 
     <dependencies>
+
+        <!-- common -->
+        <dependency>
+            <artifactId>ink-common</artifactId>
+            <groupId>cn.hyperchain</groupId>
+            <version>${pj.version}</version>
+        </dependency>
+
+        <!-- third -->
+        <dependency>
+            <artifactId>ink-third</artifactId>
+            <groupId>cn.hyperchain</groupId>
+            <version>${pj.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
 
-        <!--springboot-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-validation</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
 
-        <!--spring security-->
+        <!-- mail       -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
+            <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
 
         <!--knife4j api文档-->
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>knife4j-openapi2-spring-boot-starter</artifactId>
-            <version>${knife4j-spring-boot-starter.version}</version>
+<!--            <artifactId>knife4j-openapi3-spring-boot-starter</artifactId>-->
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId> <!-- 接口文档 UI：knife4j【网关专属】 -->
+            <artifactId>knife4j-gateway-spring-boot-starter</artifactId>
         </dependency>
 
 
@@ -88,14 +88,6 @@
         </dependency>
         <!--mysql mybatisplus druid-->
 
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-        </dependency>
         <!--swagger-->
         <!--        <dependency>-->
         <!--            <groupId>io.springfox</groupId>-->
@@ -145,18 +137,6 @@
             <version>${hutool.version}</version>
         </dependency>
 
-
-        <!-- commons -->
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>${commons.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
-            <version>${commons.version}</version>
-        </dependency>
 
     </dependencies>
 </project>

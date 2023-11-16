@@ -54,8 +54,8 @@ public class SecurityConfiguration {
     @Resource
     private TaUserService taUserService;
 
-    @Value("${server.servlet.context-path}")
-    private String contextPath;
+//    @Value("${server.servlet.context-path}")
+//    private String contextPath;
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
@@ -84,7 +84,7 @@ public class SecurityConfiguration {
         Multimap<HttpMethod, String> permitAllUrls = getPermitAllUrlsFromAnnotations();
         // 设置每个请求的权限
         httpSecurity
-                .antMatcher(contextPath + "/**")
+                .antMatcher( "/**")
                 // ①：全局共享规则
                 .authorizeRequests()
                 // 设置 @PermitAll 无需认证
@@ -92,9 +92,9 @@ public class SecurityConfiguration {
                 .antMatchers(HttpMethod.POST, permitAllUrls.get(HttpMethod.POST).toArray(new String[0])).permitAll()
                 .antMatchers(HttpMethod.PUT, permitAllUrls.get(HttpMethod.PUT).toArray(new String[0])).permitAll()
                 .antMatchers(HttpMethod.DELETE, permitAllUrls.get(HttpMethod.DELETE).toArray(new String[0])).permitAll()
-                .antMatchers(contextPath + "/swagger**/**").permitAll()
-                .antMatchers(contextPath + "/swagger-ui.html").permitAll()
-                .antMatchers(contextPath + "/webjars/**").permitAll()
+                .antMatchers( "/swagger**/**").permitAll()
+                .antMatchers( "/swagger-ui.html").permitAll()
+                .antMatchers( "/webjars/**").permitAll()
                 // ②：每个项目的自定义规则
                 .and()
                 // ③：兜底规则，必须认证
@@ -121,9 +121,9 @@ public class SecurityConfiguration {
                 .antMatchers(HttpMethod.POST, permitAllUrls.get(HttpMethod.POST).toArray(new String[0]))
                 .antMatchers(HttpMethod.PUT, permitAllUrls.get(HttpMethod.PUT).toArray(new String[0]))
                 .antMatchers(HttpMethod.DELETE, permitAllUrls.get(HttpMethod.DELETE).toArray(new String[0]))
-                .antMatchers(contextPath + "/swagger**/**")
-                .antMatchers(contextPath + "/swagger-ui.html")
-                .antMatchers(contextPath + "/webjars/**")
+                .antMatchers("/swagger**/**")
+                .antMatchers("/swagger-ui.html")
+                .antMatchers("/webjars/**")
                 ;
     }
 

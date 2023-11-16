@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.hyperchain.ink.core.dao.mapper.SysMailConfigMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.hyperchain.ink.core.dao.po.SysMailConfig">
+        <id column="id" property="id" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="is_delete" property="isDelete" />
+        <result column="mail" property="mail" />
+        <result column="mail_user_name" property="mailUserName" />
+        <result column="mail_password" property="mailPassword" />
+        <result column="mail_host" property="mailHost" />
+        <result column="mail_port" property="mailPort" />
+        <result column="ssl_enable" property="sslEnable" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, create_time, update_time, is_delete, mail, mail_user_name, mail_password, mail_host, mail_port, ssl_enable
+    </sql>
+
+</mapper>

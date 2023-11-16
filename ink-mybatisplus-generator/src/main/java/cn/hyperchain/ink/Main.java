@@ -32,24 +32,24 @@ public class Main {
 //            "ta_warn",
 //            "ta_warn_record"
 //                 "ta_case_process"
-            "ta_timeout_case",
+            "sys_mail_config",
             //   "ta_case_message"
 //            "ta_user_department",
 //            "ta_user",
 //            "ta_no_catch_person"
 //            "ta_department"
 //            "ta_case_todo"
-            "ta_disposed_of_case"
+//            "ta_disposed_of_case"
     };
 
 
     //数据库配置
 //    private static final String dbUrl = "jdbc:mysql://127.0.0.1:3306/no_catch?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true";
-    private static final String dbUrl = "jdbc:mysql://rm-bp1627pvs05272j1evo.mysql.rds.aliyuncs.com:3306/no_catch_test?useUnicode=true&characterEncoding=utf8&verifyServerCertificate=false&useSSL=false&useOldAliasMetadataBehavior=true&characterEncoding=UTF-8&serverTimezone=GMT%2b8";
+    private static final String dbUrl = "jdbc:mysql://127.0.0.1:3306/no_catch?useUnicode=true&characterEncoding=utf8&verifyServerCertificate=false&useSSL=false&useOldAliasMetadataBehavior=true&characterEncoding=UTF-8&serverTimezone=GMT%2b8";
     private static final String dbDriver = "com.mysql.cj.jdbc.Driver";
 
-    private static final String dbUserName = "writer";
-    private static final String dbPassword = "HyperFLY@W";
+    private static final String dbUserName = "root";
+    private static final String dbPassword = "123456";
 
     private static final String devAuthor = "inkchain";
 

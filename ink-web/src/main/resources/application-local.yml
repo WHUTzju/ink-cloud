@@ -3,6 +3,15 @@ server:
   tomcat:
     #请求体大小 -1不限制 默认值2MB
     max-swallow-size: -1
+  # undertow的配置
+  # 可在 pom.xml spring-boot-starter-web中切换 tomcat
+  undertow:
+    buffer-size: 1024
+    direct-buffers: true
+    threads:
+      worker: 256
+      io: 16
+
   servlet:
     context-path: /ink-api
 
@@ -51,6 +60,19 @@ mybatis-plus:
       logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
 
 
+#springdoc:
+#  swagger-ui:
+#    path: /swagger-ui.html
+#    tags-sorter: alpha
+#    operations-sorter: alpha
+#    show-extensions: true
+#  api-docs:
+#    path: /v3/api-docs
+#  group-configs:
+#    - group: 'default'
+#      paths-to-match: '/**'
+#      packages-to-scan: cn.hyperchain.ink.web
+#  default-flat-param-object: false
 
 knife4j:
   enable: true
@@ -58,6 +80,7 @@ knife4j:
     enable-swagger-models: true
     enable-document-manage: true
     swagger-model-name: 实体类列表
+    language: zh_cn
 
   openapi:
     title: Ink项目接口文档
@@ -73,8 +96,14 @@ knife4j:
       bacckendWeb:
         group-name: WEB_V1.0.1
         api-rule: package
+        path-rule: ANT
         api-rule-resources:
           - cn.hyperchain.ink.web
+  documents:
+    - name: 标题1
+      locations: classpath:markdown/*
+      group: WEB_V1.0.1
+#      group: default
 
 
 logging:
