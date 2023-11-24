@@ -1,7 +1,6 @@
 package cn.hyperchain.ink.core.config.security;
 
 import cn.hyperchain.ink.core.config.module.LoginUser;
-import cn.hyperchain.ink.core.uservice.redis.RedisUtils;
 import org.springframework.lang.Nullable;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;

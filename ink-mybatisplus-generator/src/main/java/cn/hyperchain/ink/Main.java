@@ -32,7 +32,9 @@ public class Main {
 //            "ta_warn",
 //            "ta_warn_record"
 //                 "ta_case_process"
-            "sys_mail_config",
+            "stream_push",
+//            "property_app_pkg",
+//            "property_evidence_open",
             //   "ta_case_message"
 //            "ta_user_department",
 //            "ta_user",
@@ -45,7 +47,8 @@ public class Main {
 
     //数据库配置
 //    private static final String dbUrl = "jdbc:mysql://127.0.0.1:3306/no_catch?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true";
-    private static final String dbUrl = "jdbc:mysql://127.0.0.1:3306/no_catch?useUnicode=true&characterEncoding=utf8&verifyServerCertificate=false&useSSL=false&useOldAliasMetadataBehavior=true&characterEncoding=UTF-8&serverTimezone=GMT%2b8";
+//    private static final String dbUrl = "jdbc:mysql://rm-bp15ol5phrs6k3x6n2o.mysql.rds.aliyuncs.com:3306/iprp_dev?useUnicode=true&characterEncoding=utf8&verifyServerCertificate=false&useSSL=false&useOldAliasMetadataBehavior=true&characterEncoding=UTF-8&serverTimezone=GMT%2b8";
+    private static final String dbUrl = "jdbc:mysql://172.22.70.98:3306/zhaoqing_screen?useUnicode=true&characterEncoding=utf8&verifyServerCertificate=false&useSSL=false&useOldAliasMetadataBehavior=true&characterEncoding=UTF-8&serverTimezone=GMT%2b8";
     private static final String dbDriver = "com.mysql.cj.jdbc.Driver";
 
     private static final String dbUserName = "root";
@@ -53,7 +56,7 @@ public class Main {
 
     private static final String devAuthor = "inkchain";
 
-    private static final String parentPackage = "cn.hyperchain.ink.core";
+    private static final String parentPackage = "cn.hyperchain.zjchain";
 
     private static final String datasourcePackageName = "dao";
 

@@ -1,4 +1,4 @@
-package cn.hyperchain.ink.core.uservice.redis;
+package cn.hyperchain.ink.core.system.redis;
 
 import cn.hyperchain.ink.core.constant.RedisCacheType;
 import com.alibaba.fastjson.JSON;
@@ -73,6 +73,13 @@ public class RedisUtils {
 
     public void set(String key, Object value) {
         valueOperations.set(key, toJson(value));
+    }
+
+    public void set(String key, Object value, long expire, TimeUnit timeUnit) {
+        valueOperations.set(key, toJson(value));
+        if (expire != NOT_EXPIRE) {
+            redisTemplate.expire(key, expire, timeUnit);
+        }
     }
 
     /**
