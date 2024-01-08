@@ -1,4 +1,4 @@
-package cn.hyperchain.ink.core.system.swagger;
+package cn.hyperchain.ink.core.sysconf.swagger;
 
 /**
  * @Description:

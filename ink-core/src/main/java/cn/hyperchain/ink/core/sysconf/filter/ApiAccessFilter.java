@@ -1,4 +1,4 @@
-package cn.hyperchain.ink.core.system.filter;
+package cn.hyperchain.ink.core.sysconf.filter;
 
 import com.alibaba.fastjson.JSON;
 import lombok.Getter;

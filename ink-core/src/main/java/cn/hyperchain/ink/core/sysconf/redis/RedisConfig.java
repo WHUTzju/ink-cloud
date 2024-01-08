@@ -1,8 +1,9 @@
-package cn.hyperchain.ink.core.system.redis;
+package cn.hyperchain.ink.core.sysconf.redis;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
@@ -13,11 +14,9 @@ import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.cache.RedisCacheWriter;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
-import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
 import org.springframework.data.redis.core.*;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.RedisSerializationContext;
-import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import java.io.Serializable;
@@ -30,6 +29,7 @@ import java.net.UnknownHostException;
  * <p>
  * Created by zhangrui on 2018/11/15.
  */
+@Slf4j
 @Configuration
 @EnableCaching
 @AutoConfigureAfter(RedisAutoConfiguration.class)
@@ -38,10 +38,10 @@ public class RedisConfig implements Serializable {
     /**
      * Springboot 默认使用 LettuceConnectionConfiguration
      */
-    @Bean
-    public RedisConnectionFactory redisConnectionFactory() {
-        return new LettuceConnectionFactory();
-    }
+//    @Bean
+//    public RedisConnectionFactory redisConnectionFactory() {
+//        return new LettuceConnectionFactory();
+//    }
 
     /**
      * 自定义RedisCacheManager，用于在使用@Cacheable时设置ttl
@@ -56,12 +56,22 @@ public class RedisConfig implements Serializable {
 
     @Bean
     public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory connectionFactory) {
+        log.info(" --- redis config init --- ");
         RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
         redisTemplate.setConnectionFactory(connectionFactory);
         /**
          * 使用StringRedisSerializer来序列化和反序列化redis的key值
          * 默认 StandardCharsets.UTF_8
          */
+        /**
+         * 设置key的序列化器 默认值
+         */
+//        redisTemplate.setKeySerializer(RedisSerializer.string());
+//        redisTemplate.setValueSerializer(RedisSerializer.string());
+//        redisTemplate.setHashKeySerializer(RedisSerializer.string());
+//        redisTemplate.setHashValueSerializer(RedisSerializer.string());
+//        redisTemplate.afterPropertiesSet();
+
         Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = jacksonSerializer();
 
         /**

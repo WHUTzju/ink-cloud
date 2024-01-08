@@ -1,10 +1,9 @@
-package cn.hyperchain.ink.core.system.mybatisplus;
+package cn.hyperchain.ink.core.sysconf.mybatisplus;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import org.apache.ibatis.reflection.MetaObject;
 import org.springframework.context.annotation.Configuration;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 
 /**

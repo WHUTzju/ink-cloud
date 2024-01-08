@@ -1,4 +1,4 @@
-package cn.hyperchain.ink.core.system.interceptors;
+package cn.hyperchain.ink.core.sysconf.interceptors;
 
 import cn.hyperchain.ink.core.constant.user.UserRole;
 

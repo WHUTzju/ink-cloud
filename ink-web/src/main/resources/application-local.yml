@@ -42,6 +42,29 @@ spring:
     host: 127.0.0.1
     port: 9379
     password: tr@cidence@redis
+    redisson:
+      #      file: "classpath:redisson.yml"
+      config:
+        singleServerConfig:
+          idleConnectionTimeout: 10000
+          connectTimeout: 10000
+          timeout: 3000
+          retryAttempts: 3
+          retryInterval: 1500
+          password: tr@cidence@redis
+          subscriptionsPerConnection: 5
+          clientName: iprpredis
+          address: "redis://127.0.0.1:9379"
+          subscriptionConnectionMinimumIdleSize: 1
+          subscriptionConnectionPoolSize: 50
+          connectionMinimumIdleSize: 24
+          connectionPoolSize: 64
+          database: 7
+          dnsMonitoringInterval: 5000
+        threads: 16
+        nettyThreads: 32
+        #        codec: "!<org.redisson.codec.JsonJacksonCodec>{}"
+        transportMode: "NIO"
 
 ink:
   swagger-enable: true

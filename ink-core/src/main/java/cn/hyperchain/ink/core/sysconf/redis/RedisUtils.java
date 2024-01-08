@@ -1,6 +1,5 @@
-package cn.hyperchain.ink.core.system.redis;
+package cn.hyperchain.ink.core.sysconf.redis;
 
-import cn.hyperchain.ink.core.constant.RedisCacheType;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;

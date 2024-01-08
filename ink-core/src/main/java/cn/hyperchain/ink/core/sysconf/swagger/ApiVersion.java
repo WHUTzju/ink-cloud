@@ -1,4 +1,4 @@
-package cn.hyperchain.ink.core.system.swagger;
+package cn.hyperchain.ink.core.sysconf.swagger;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -1,7 +1,7 @@
 package cn.hyperchain.ink.web.system.interceptors;
 
 
-import cn.hyperchain.ink.core.system.interceptors.RequestTokenArgumentResolver;
+import cn.hyperchain.ink.core.sysconf.interceptors.RequestTokenArgumentResolver;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;

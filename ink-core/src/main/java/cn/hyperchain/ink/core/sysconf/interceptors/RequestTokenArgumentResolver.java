@@ -1,4 +1,4 @@
-package cn.hyperchain.ink.core.system.interceptors;
+package cn.hyperchain.ink.core.sysconf.interceptors;
 
 
 import cn.hyperchain.ink.core.biz.service.intf.TaUserService;
@@ -6,7 +6,6 @@ import cn.hyperchain.ink.core.constant.BaseConstant;
 import cn.hyperchain.ink.core.constant.Code;
 import cn.hyperchain.ink.core.constant.user.UserRole;
 import cn.hyperchain.ink.core.dao.po.TaUser;
-import cn.hyperchain.ink.core.exception.BusinessException;
 import cn.hyperchain.ink.core.exception.TokenException;
 import cn.hyperchain.ink.core.model.token.Token;
 import cn.hyperchain.ink.core.uservice.token.TokenFactory;
@@ -14,7 +13,6 @@ import cn.hyperchain.ink.core.util.AssertUtil;
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.core.MethodParameter;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ObjectUtils;

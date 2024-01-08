@@ -1,49 +1,44 @@
-package cn.hyperchain.ink.core.system.email;
+package cn.hyperchain.ink.core.sysconf.email;
 
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.extra.mail.MailAccount;
 import cn.hutool.extra.mail.MailUtil;
+import cn.hyperchain.ink.core.biz.service.intf.SysMailConfigService;
 import cn.hyperchain.ink.core.dao.po.SysMailConfig;
-import org.junit.Test;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @program: ink
  * @description:
  * @author: inkChain
- * @create: 2023-08-14 21:15
+ * @create: 2023-08-14 21:58
  **/
-public class MailTest {
+@Slf4j
+@Component
+public class MailSendHandle {
 
-    //    private
-//
-//    String messageId = MailUtil.send(mailAccount, message.getMail(),
-//            message.getTitle(), message.getContent(),true);
+    @Resource
+    private SysMailConfigService mailConfigService;
 
-    SysMailConfig sysMailConfig = SysMailConfig
-            .builder()
-            .mail("zjssjzscqdjpt@163.com")
-            .mailUserName("zjssjzscqdjpt@163.com")
-            .mailPassword("HRXKOOFUCYADQFDV")
-            .mailHost("smtp.163.com")
-            .mailPort(465)
-            .sslEnable(true)
-            .build();
+    public String sendMail(MailSendMessage message) {
 
-    MailSendMessage message = MailSendMessage.builder()
-            .mail("zhangrui@hyperchain.cn")
-            .title("测试发送邮件")
-            .content("测试内容")
-            .nickname("TestNickName")
-            .build();
+        List<SysMailConfig> mailList = mailConfigService.list();
+        if (null == mailList || mailList.size() == 0) {
+            log.info("mail error");
+            return "";
+        }
+        SysMailConfig sysMailConfig = mailList.get(0);
 
-    @Test
-    public void t_01() {
         MailAccount mailAccount = convert(sysMailConfig, message.getNickname());
         String messageId = MailUtil.send(mailAccount, message.getMail(),
                 message.getTitle(), message.getContent(), true);
-        System.out.println(messageId);
+        log.info("mail");
+        return messageId;
     }
-
 
     MailAccount convert(SysMailConfig mailConfig, String nickname) {
         String from = StrUtil.isNotEmpty(nickname) ? nickname + " <" + mailConfig.getMail() + ">" : mailConfig.getMail();

@@ -1,4 +1,4 @@
-package cn.hyperchain.ink.core.system.redis;
+package cn.hyperchain.ink.core.sysconf.redis;
 
 import org.springframework.data.redis.cache.RedisCache;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;

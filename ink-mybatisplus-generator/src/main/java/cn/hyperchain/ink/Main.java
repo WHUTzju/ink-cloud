@@ -32,12 +32,13 @@ public class Main {
 //            "ta_warn",
 //            "ta_warn_record"
 //                 "ta_case_process"
-            "stream_push",
-//            "property_app_pkg",
-//            "property_evidence_open",
+//            "media_chain_log",
+//            "property_data_reg",
+//            "property_data_reg_registration",
+//            "property_data_reg_registration_log",
             //   "ta_case_message"
 //            "ta_user_department",
-//            "ta_user",
+            "confirmation",
 //            "ta_no_catch_person"
 //            "ta_department"
 //            "ta_case_todo"
@@ -47,12 +48,12 @@ public class Main {
 
     //数据库配置
 //    private static final String dbUrl = "jdbc:mysql://127.0.0.1:3306/no_catch?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true";
-//    private static final String dbUrl = "jdbc:mysql://rm-bp15ol5phrs6k3x6n2o.mysql.rds.aliyuncs.com:3306/iprp_dev?useUnicode=true&characterEncoding=utf8&verifyServerCertificate=false&useSSL=false&useOldAliasMetadataBehavior=true&characterEncoding=UTF-8&serverTimezone=GMT%2b8";
-    private static final String dbUrl = "jdbc:mysql://172.22.70.98:3306/zhaoqing_screen?useUnicode=true&characterEncoding=utf8&verifyServerCertificate=false&useSSL=false&useOldAliasMetadataBehavior=true&characterEncoding=UTF-8&serverTimezone=GMT%2b8";
+    private static final String dbUrl = "jdbc:mysql://rm-bp15ol5phrs6k3x6n2o.mysql.rds.aliyuncs.com:3306/iprp_dev?useUnicode=true&characterEncoding=utf8&verifyServerCertificate=false&useSSL=false&useOldAliasMetadataBehavior=true&characterEncoding=UTF-8&serverTimezone=GMT%2b8";
+    //    private static final String dbUrl = "jdbc:mysql://172.22.70.98:3306/zhaoqing_screen?useUnicode=true&characterEncoding=utf8&verifyServerCertificate=false&useSSL=false&useOldAliasMetadataBehavior=true&characterEncoding=UTF-8&serverTimezone=GMT%2b8";
     private static final String dbDriver = "com.mysql.cj.jdbc.Driver";
 
-    private static final String dbUserName = "root";
-    private static final String dbPassword = "123456";
+    private static final String dbUserName = "iprp_dev";
+    private static final String dbPassword = "dev@2020";
 
     private static final String devAuthor = "inkchain";
 

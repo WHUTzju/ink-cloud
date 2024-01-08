@@ -1,4 +1,4 @@
-package cn.hyperchain.ink.core.constant;
+package cn.hyperchain.ink.core.sysconf.redis;
 
 /**
  * @author cmt

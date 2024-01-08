@@ -1,4 +1,4 @@
-package cn.hyperchain.ink.core.system.email;
+package cn.hyperchain.ink.core.sysconf.email;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
