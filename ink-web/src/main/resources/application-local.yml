@@ -128,6 +128,46 @@ knife4j:
       group: WEB_V1.0.1
 #      group: default
 
+retrofit:
+  # 全局转换器工厂
+  global-converter-factories:
+    - com.github.lianjiatech.retrofit.spring.boot.core.BasicTypeConverterFactory
+    - retrofit2.converter.jackson.JacksonConverterFactory
+    - cn.hyperchain.ink.core.config.retrofit.FastjsonConverterFactory
+  # 全局调用适配器工厂
+  global-call-adapter-factories:
+    - com.github.lianjiatech.retrofit.spring.boot.core.BodyCallAdapterFactory
+    - com.github.lianjiatech.retrofit.spring.boot.core.ResponseCallAdapterFactory
+  # 全局日志打印配置
+  global-log:
+    # 启用日志打印
+    enable: true
+    # 全局日志打印级别
+    log-level: trace
+    # 全局日志打印策略
+    log-strategy: body
+  # 全局重试配置，如果只有一部分请求需要重试，可以在相应的接口或者方法上使用@Retry注解
+  global-retry:
+    # 是否启用全局重试
+    enable: true
+    # 全局重试间隔时间
+    interval-ms: 1000
+    # 全局最大重试次数
+    max-retries: 2
+    # 全局重试规则
+    retry-rules:
+      - response_status_not_2xx
+      - occur_io_exception
+  # 全局连接超时时间，还有局部的，在@RetrofitClient注解上可以设置超时时间，针对当前接口生效，优先级更高。具体字段有connectTimeoutMs、readTimeoutMs、writeTimeoutMs、callTimeoutMs等
+  global-timeout:
+    # 全局读取超时时间
+    read-timeout-ms: 10000
+    # 全局写入超时时间
+    write-timeout-ms: 10000
+    # 全局连接超时时间
+    connect-timeout-ms: 10000
+    # 全局完整调用超时时间
+    call-timeout-ms: 0
 
 logging:
   config: classpath:logback-spring.xml
